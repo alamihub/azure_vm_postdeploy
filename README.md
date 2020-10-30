@@ -1,7 +1,14 @@
-### Github Tutorial
+### Linux script to set root password after Azure VM deployement
+#### consider that default time for custom script exectution is 90 min
+#### ${rootPass} is passed as argument to script and we call it with $1 (you can add arguments as many as you want $2....)
 
-####1. [How to Host Files on Github](http://www.labnol.org/internet/free-file-hosting-github/29092/)
+### add this to your body request:
+                "settings": {
+                    "fileUris": ["https://<YOUR_BUPLIC_URL>/SetRootPassword.sh"],
+                    "commandToExecute": `./SetRootPassword.sh ${rootPass}`
+                }
 
-####2. [Github Gists for Non-Developers](http://www.labnol.org/internet/github-gist-tutorial/28499/)
+####1. [How to Create Virtual Machine Extension using Rest-api](https://docs.microsoft.com/en-us/rest/api/compute/virtualmachineextensions/createorupdate)
 
-Append ?raw=true to any file URL on Github to get the direct link.
+
+
