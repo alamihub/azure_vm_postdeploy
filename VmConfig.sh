@@ -3,7 +3,7 @@ b=4
 sudo sed -i -e "s/PermitRootLogin no/PermitRootLogin yes/" /etc/ssh/sshd_config
 sudo service sshd reload
 echo "root:$1" | chpasswd
-for (( i=1; i<=$2; i++ ))
+for (( i=1; i<$2; i++ ))
 do
     j=$(( $i + $b ))
     echo "
